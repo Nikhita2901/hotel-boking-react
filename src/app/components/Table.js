@@ -52,14 +52,15 @@ class Table extends React.Component{
             <div>
                 <h3 style={{textAlign:"center", fontStyle:"normal",backgroundColor:"#D79922"}}>HOTEL STAFF DETAILS <i style={{ font:"caption"}}></i></h3>
                 <div className="row">
-            <div className="col-md-6">
+                <div className="col-md-1"></div>
+            <div className="col-md-5">
                 <div className="table-responsive">
                    <table className="table">
                     <thead>
-                        <tr style={{backgroundColor:"green"}}>
+                        <tr>
                             <th>Sl.No.</th>
                             <th>Name</th>
-                            <th>Job</th>
+                            <th>Designation</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -84,7 +85,7 @@ class Table extends React.Component{
                       <label style={{float:"left"}}>Designation</label>
                       <input type='text' className="form-control" value={this.state.job} onChange={this.handleJobChange}/>
                   </div>
-                 <button className="btn btn-primary" onClick={this.addRow}>Submit</button>
+                 <button className="btn btn-primary" style={{float:"right"}} onClick={this.addRow}>Submit</button>
               </div>  
             </div>
             </div>
