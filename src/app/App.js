@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import {BrowserRouter as Router, Link, NavLink, Redirect} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 import Booking from './components/Booking';
 import Table from './components/Table';
 import Home from './components/Home';
-import {BrowserRouter as Router, Link, NavLink, Redirect} from 'react-router-dom';
-import Route from 'react-router-dom/Route';
+import Footer from './components/Footer';
 
 
 // class App extends Component {
@@ -59,7 +60,7 @@ const User = ({match}) => {
       <Router>
         <div className="App" style={{width:"100%", overflowX:"hidden"}}>
           <div style={{backgroundColor:"black",height:"100px"}}>
-            <h3 style={{float:"right",color:"white", marginRight:"40px", marginTop:"20px"}}><i>Visit again!!!</i></h3>
+            <h3 style={{float:"right",color:"white", marginRight:"40px", marginTop:"20px"}}><i>Welcome!!!</i></h3>
           ​<nav className="navbar navbar-default"  style={{backgroundColor:"black"}}>
            <div className="container-fluid" style={{backgroundColor:"black",margin:"0px"}}>
       <ul className="" style={ulstyle}>
@@ -68,17 +69,17 @@ const User = ({match}) => {
              {color:'yellow'}} style={navlinkstyle}>HOME</NavLink>
            </li>
            <li  style={{float:"left"}}>
-           <NavLink to = '/projects' exact activeStyle={
-             {color:'yellow'}} style={navlinkstyle}>PROJECTS</NavLink> 
+           <NavLink to = '/booking' exact activeStyle={
+             {color:'yellow'}} style={navlinkstyle}>BOOKINGS</NavLink> 
            </li>
            <li  style={{float:"left"}}>
-           <NavLink to = '/services' exact activeStyle={
-             {color:'yellow'}} style={navlinkstyle}>SERVICES</NavLink>
+           <NavLink to = '/staff' exact activeStyle={
+             {color:'yellow'}} style={navlinkstyle}>STAFF</NavLink>
            </li>
-           <li  style={{float:"left"}}>
+           {/* <li  style={{float:"left"}}>
            <NavLink to = '/contact' exact activeStyle={
              {color:'yellow'}} style={navlinkstyle}>CONTACT</NavLink>
-           </li>
+           </li> */}
       </ul>
     </div>
   </nav>
@@ -90,29 +91,29 @@ const User = ({match}) => {
               return (<Home></Home>)
             }
           }/>
-          <Route path='/projects' exact strict render={
+          <Route path='/booking' exact strict render={
             () => {
               return (<Booking></Booking>)
             }
           }/>
   
-           <Route path='/services' exact strict render={
+           <Route path='/staff' exact strict render={
             () => {
-              return (<h1>You chose SERVICES</h1>)
+              return (<Table></Table>)
             }
           }/>
-          <Route path='/contact' exact strict render={
+          {/* <Route path='/contact' exact strict render={
             () => {
               return (<h1>You chose CONTACT</h1>)
             }
-          }/>
+          }/> */}
           {/* <Route path='/user/:username' exact strict component={User}/>
            */}
            {/* <Route path='/user/:username' exact strict render={({match})=>(
             state.loggedIn ? (<User username={match.params.username}/>) : (<Redirect to="/"/>)
           )}/> */}
         </div>
-        
+        <Footer></Footer>
       </Router>     
       
     );

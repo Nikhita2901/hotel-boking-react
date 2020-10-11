@@ -3013,3 +3013,15 @@ select.stack {
   margin-right: -6px;
   right: 100%;
   top: 7px; }
+  .footer{
+    margin-top: 1rem;
+    padding: 1rem;
+    /* background-color: rgb(235, 195, 64); */
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    float:right;
+  }
+  

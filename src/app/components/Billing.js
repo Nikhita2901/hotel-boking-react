@@ -48,7 +48,7 @@ class Billing extends Component {
     render() {
         return (
             <div>
-                <h2>Summary</h2>
+                <h2>Bill Summary</h2>
 
                 <table>
                     <tbody>

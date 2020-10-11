@@ -7,7 +7,7 @@ class Table extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            rows: [{index: 0, name: "Sindhu", job:"Manager"}, {index: 1, name: "Namratha", job:"Lead"},{index: 1, name: "Nikhita", job:"Developer"}],
+            rows: [{index: 0, name: "Sindhu", job:"Owner"},{index: 1, name: "Prakash", job:"Manager"}, {index: 2, name: "Namratha", job:"Receptionist"},{index: 3, name: "Nikhita", job:"Receptionist"}],
             rowIndex: 1,
             name:'',
             job:''
@@ -49,12 +49,14 @@ class Table extends React.Component{
 
     render() {
         return (
-            <div className="row">
+            <div>
+                <h3 style={{textAlign:"center", fontStyle:"normal",backgroundColor:"#D79922"}}>HOTEL STAFF DETAILS <i style={{ font:"caption"}}></i></h3>
+                <div className="row">
             <div className="col-md-6">
                 <div className="table-responsive">
                    <table className="table">
                     <thead>
-                        <tr>
+                        <tr style={{backgroundColor:"green"}}>
                             <th>Sl.No.</th>
                             <th>Name</th>
                             <th>Job</th>
@@ -73,18 +75,20 @@ class Table extends React.Component{
                </div>
               </div>              
               <div className="col-md-5">
+                  <h3>Add new staff details</h3>
                   <div className="form-group">
                       <label style={{float:"left"}}>Name</label>
                       <input type='text' className="form-control" value={this.state.name} onChange={this.handleUsernameChange}/>
                   </div>
                   <div className="form-group">
-                      <label style={{float:"left"}}>Job</label>
+                      <label style={{float:"left"}}>Designation</label>
                       <input type='text' className="form-control" value={this.state.job} onChange={this.handleJobChange}/>
                   </div>
-                  <Booking></Booking>
                  <button className="btn btn-primary" onClick={this.addRow}>Submit</button>
               </div>  
             </div>
+            </div>
+            
         )
     }
 }

@@ -70,13 +70,18 @@ class Booking extends Component {
         })
     }
      
+    confirmBooking () {
+        alert("Booking successful");
+    }
     
     render() {
         return (
             <div>
-                <h2>Booking</h2>
-
-                <DateSelector checkinDate = {this.state.checkinDate} 
+                <h3 style={{textAlign:"center", fontStyle:"normal",backgroundColor:"#D79922"}}>BOOK ROOMS HERE <i style={{ font:"caption"}}></i></h3>
+                <div className="row" >
+                    <div className="col-md-1"></div>
+                   <div className="col-md-5" >
+                   <DateSelector checkinDate = {this.state.checkinDate} 
                               checkoutDate = {this.state.checkoutDate}
                               totalDays = {this.state.totalDays}
                               invalidRange = {this.state.invalidRange}
@@ -89,14 +94,19 @@ class Booking extends Component {
                             onOccupantsChange = {this.onOccupantsChange}
                 
                 />
-
-                { !this.state.invalidRange 
+                <br></br>
+                <button className="btn btn-primary" style={{float:"right"}}onClick={this.confirmBooking}>Confirm Booking</button>
+                </div>
+                <div className="col-md-1"></div>
+                <div className="col-md-5">
+                    { !this.state.invalidRange 
                     && 
                     <Billing roomType={this.state.roomType}
                               totalDays = {this.state.totalDays} 
                               occupants = {this.state.occupants}
                               /> }
-
+                </div>
+                </div>
             </div>
         );
     }

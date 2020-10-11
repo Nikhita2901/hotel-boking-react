@@ -16,7 +16,7 @@ const  DateSelector = (props) => {
             invalidRange
         } = props;
         return (
-            <div>
+            <div style={{marginRight:"10px"}}>
                 <h2>Date Range</h2>
 
                 <DatePicker
