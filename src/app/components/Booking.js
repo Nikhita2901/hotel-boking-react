@@ -78,7 +78,7 @@ class Booking extends Component {
         return (
             <div>
                 <h3 style={{textAlign:"center", fontStyle:"normal",backgroundColor:"#D79922"}}>BOOK ROOMS HERE <i style={{ font:"caption"}}></i></h3>
-                <div className="row" >
+                <div className="row" >                    
                     <div className="col-md-1"></div>
                    <div className="col-md-5" >
                    <DateSelector checkinDate = {this.state.checkinDate} 

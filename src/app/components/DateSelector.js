@@ -17,7 +17,7 @@ const  DateSelector = (props) => {
         } = props;
         return (
             <div style={{marginRight:"10px"}}>
-                <h2>Date Range</h2>
+                <h2>Duration of stay</h2>
 
                 <DatePicker
                     selected={checkinDate}
